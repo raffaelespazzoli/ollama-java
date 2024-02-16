@@ -1,0 +1,64 @@
+{
+  "model": "fLlama-2-7b", 
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is the square root of the sum of the numbers of letters in the words \"hello\" and \"world\""
+    }
+  ],
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "functions": [
+    {
+      "name": "stringLength",
+      "description": "Calculates the length of a string",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "s"
+        ]
+      }
+    },
+    {
+      "name": "add",
+      "description": "Calculates the sum of two numbers",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "integer"
+          },
+          "b": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "a",
+          "b"
+        ]
+      }
+    },
+    {
+      "name": "sqrt",
+      "description": "Calculates the square root of a number",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "x"
+        ]
+      }
+    }
+  ]
+}
